@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144">
+    <meta name="theme-color" content="#ffffff">
+
+    <title>Weka - Kmeans</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/styles-modal.css">
+    <script src="https://kit.fontawesome.com/5000f8f494.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+
+    <div class="button-cont">
+        <a href="#" class="button" onclick="document.documentElement.classList.toggle('dark-mode')">
+        <!-- <a class="button" onclick="saludo()"> -->
+           MODO OSCURO
+            <span class="span-1">: OFF</span>
+            <span class="span-2">: ON</span>
+        </a>
+    </div>
+
+    <div class="cont-tittle" style="border-bottom: 1px solid rgba(0,0,0,.12);">
+        <a href="index.html" title="Titulo :v">
+            <img class="img-1" src="assets/images/8_1.jpg" alt="logo.jpg">
+            <img class="img-2" src="assets/images/rikura.png" alt="riko.png">
+            <h1 class="cont-tittle__tittle">Weka API</h1>
+            <span class="cont-tittle__subtittle">Requerimiento 83 - Don't Forget</span>
+        </a>
+        <!-- <div>
+            <span><i class="fas fa-exclamation-triangle"></i><strong> Advertencia, si no lo terminamios para el sabado GG.</strong></span>
+        </div> -->
+    </div>
+
+    <!-- <header class="header">
+        <nav class="navbar">
+            <ul class="menu">
+                <input type="checkbox"  id="nav-toggle">
+                <label for="nav-toggle" class="icon-nav">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </label>
+                <li class="menu__item">
+                    <a href="../index.html" title="Comienza aquí">
+                        <i class="fas fa-home grid__item"></i>
+                        <strong>Inicio</strong>
+                        <span>¡Comienza aquí!</span>
+                    </a>
+                </li>
+
+                <li class="menu__item--classic visited-link">
+                    <a href="#" style="color: #1747ff;" title="Lenguajes clásicos" onclick="document.documentElement.classList.toggle('submenu-1')">
+                        <i class="fas fa-code"></i>
+                        <strong class="grid__item strong">Ejecutar</strong>
+                        <span>Algoritmos ML</span>
+                    </a>
+                   
+                </li>
+
+
+                <li class="menu__item">
+                    <a href="external-resources.html" title="Recursos ajenos">
+                        <i class="fas fa-external-link-alt grid__item"></i>
+                        <strong>Elementos Externos</strong>
+                        <span>Recursos ajenos</span>
+                    </a>
+                </li>
+
+                <li class="menu__item">
+                    <a href="about-us.html" title="Para rellenar">
+                        <i class="fab fa-blogger grid__item"></i>
+                        <strong>Sobre nosostros</strong>
+                        <span>Don't Forget</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header> -->
+
+    
+    <main>
+        <div class="content">
+            <form id="form-post" class="form-weka">
+                    <legend>Ejecutar Weka</legend>
+                    <hr>
+                    <div>
+                        <label for="database">Base de datos </label>
+                        <input type="text" id="database" placeholder="DELATI" disabled>
+                    </div>
+                    <div class="form-div-select">
+                        <div>
+                            <label for="algoritmo">Algoritmo</label>
+                            <select name="algoritmo" id="algoritmo" class="form-select" disabled>
+                                <option selected>Cobweb</option>
+                                <option>EM</option>
+                                <option>Canopy</option>
+                                <option>KMeans</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="query">Query</label>
+                        <textarea name="query" id="query" cols="30" rows="10" placeholder="Ingrese aquí su query"></textarea>
+                    </div>
+                    <div id="buttom-form">
+                        <button class="buttom-form_item more" id="more">
+                            <span>Más opciones</span>
+                        </button>
+                        <button class="buttom-form_item execute" id="execute">
+                            <span>Ejecutar</span>
+                        </button>
+                    </div>
+            </form>
+        </div>
+
+
+        <div class="modal-options hidden">
+            <div class="content">
+                <div class="form-weka">
+                    <legend>Opciones Avanzadas</legend>
+                    <hr>
+                    <form id="form-modal"></form>
+                    <hr>
+                    <div class="modal-button">
+                        <button id="cancel" class="modal-button__item">
+                            <span>Cancelar</span>
+                        </button>
+                        <button id="save" class="modal-button__item">
+                            <span>Guardar</span>
+                        </button>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div class="content despair" id="result">
+            <h2>RESULTADOS</h2>
+            <div class="lds-dual-ring"></div>
+            <table>
+                <thead class="border-bottom">
+                    <th>ID</th>
+                    <th id="nameNode">Nombre</th>
+                    <th id="typeNode">Tipo</th>
+                    <th id="numberData">Cantidad de Datos</th>
+                    <th >Más Opciones</th>
+                </thead>
+                <tbody id="table-content">
+                </tbody>
+            </table>
+            <h2>Extra</h2>
+            <table>
+                <thead class="border-bottom">
+                    <th>Resultado de Ejecución</th>
+                </thead>
+                <tbody id="table-content-execute">
+                </tbody>
+            </table>
+            <table>
+                <thead class="border-bottom">
+                    <th>Clustered Instances</th>
+                </thead>
+                <tbody id="table-content-cluster">
+                </tbody>
+            </table>
+            <!-- <button id="download" class="btn" disabled><i class="fa fa-download"></i>Descargar</button> -->
+        </div>
+
+        <div class="modal-more-info hidden">
+            <div class="content" style="padding-bottom: 50px;">
+                <div class="form-weka form-weka-modal">
+                    <div class="modal-header">
+                        <legend>Información del Nodo</legend>
+                        <i class="fas fa-times close-modal"></i>
+                    </div>
+                    <hr>
+                    <div id="nodeInfoContent"></div>
+                    <div class="modal-header">
+                        <legend>Hijos del Nodo</legend>
+                    </div>
+                    <hr>
+                    <div id="childInfoContent"></div>
+                    <hr>
+                    <div class="modal-button"></div>
+                </div>
+            </div>
+        </div>
+
+        
+    </main>
+
+    <footer class="footer">
+        <div class="footer-item">
+            <h4><u>DON'T FORGET</u></h4>
+                <span>CHIPANA RAMOS, PAUL</span>
+                <span>CHOQUE QUISPE, NELSON</span>
+                <span>MATURRANO TEODORO, DAVID</span>
+        </div>
+        <div class="footer-item">
+            <h4><u>HECHO CON</u></h4>
+                <span><u>Java</u></span>
+                <span><u>Javascript</u></span>
+                <span><u>Weka</u></span>
+        </div>
+        <div class="footer-item">
+            <h4><u>ENLACES DE INTERES</u></h4>
+                <a href="https://github.com/DavidMaturrano/delati-backend.git" target="_blank"><u>GitHub(Back)</u></a>
+                <a href="#"><u>GitHub(Front)</u></a>
+                <a href="https://trello.com/b/wdsnvgzZ/dont-forget" target="_blank"><u>Trello</u></a>
+                
+        </div>
+        
+        <div class="footer-item">
+            <h3 class="footer__end">Don't Forget - 2021</h3>
+        </div>
+        <div class="footer-item">
+            <img src="assets/images/TamamoBall.png" alt="tama.png">
+        </div>
+    </footer>
+    <script src="js/index.js" type="module"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/modal.js" type="module"></script>
+    
+</body>
+</html>
